@@ -26,6 +26,10 @@ class InLk extends Controller
 
   public function info()
   {
+    if ($this->db->is_employee()) {
+      // $this->display('enrolles_list');
+      exit;
+    }
     //Если данных в t_enrollee нет в бд на юзера, то делать редирект на account.
     if ($this->db->check_data_enrolee() !== false) {
       $this->account();
@@ -50,7 +54,8 @@ class InLk extends Controller
   }
 
   public function enrolles_list() {
-    if (!isset($_SESSION['is_emploee'])) {
+    $this->err_log($_SESSION['is_employee']);
+    if (!isset($_SESSION['is_employee'])) {
       $this->redirect('info');
       exit;
     }

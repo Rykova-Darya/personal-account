@@ -175,7 +175,7 @@ class DB
                                     LEFT JOIN t_enrollee ON user_id = user_fk
                                     LEFT JOIN t_educational_doc ted ON educational_doc_fk = ted.id
                                     LEFT JOIN t_educational_degree tedd ON educational_fk = tedd.id
-                                    WHERE is_emploee = false AND user_id = user_fk");
+                                    WHERE is_employee = false AND user_id = user_fk");
       $stmt->execute();
       $data_users = $stmt->fetchAll();
       $result = $stmt->rowCount();
@@ -197,6 +197,23 @@ class DB
       $stmt->execute();
       $result = $stmt->rowCount();
       if ($result > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (\PDOException $e) {
+      die('Ошибка запроса: ' . $e->getMessage());
+    }
+  }
+
+  public function is_employee() {
+    try {
+      $stmt = $this->pdo->prepare("SELECT is_employee FROM t_user WHERE user_id = :user_id");
+      $stmt->bindParam(':user_id', $this->user_id);
+      $stmt->execute();
+      $data_user = $stmt->fetch();
+      error_log(json_encode($data_user));
+      if ($data_user['is_employee']) {
         return true;
       } else {
         return false;

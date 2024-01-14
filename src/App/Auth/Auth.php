@@ -82,8 +82,8 @@ class Auth extends Controller
       $_SESSION['user_login'] = $user_data['login'];
       $_SESSION['user_password'] = $user_data['password'];
       $_SESSION['user_id'] = $user_data['user_id'];
-      if ($user_data['is_emploee']) {
-      $_SESSION['is_emploee'] = 'enrolles-list';
+      if ($user_data['is_employee']) {
+      $_SESSION['is_employee'] = 'enrolles-list';
         return 'enrolles-list';
       }
       return true;
