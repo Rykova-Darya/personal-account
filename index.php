@@ -32,6 +32,9 @@ switch ($page) {
   case 'signup': $c = new Auth; $c->signup(); break;
   case 'info': $c = new InLk; $c->info(); break;
   case 'logout' : $c = new InLk; $c->logout(); break;
+  case 'send_questionnaire' : $c = new InLk; $c->send_questionnaire(); break;
+  case 'account' : $c = new InLk; $c->account(); break;
+  case 'enrolles-list' : $c = new InLk; $c->enrolles_list(); break;
   default : $c = new InLk; $c->info(); break;
 }
 

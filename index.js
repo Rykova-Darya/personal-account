@@ -55,3 +55,43 @@ async function sendSimpleHttpRequest(url, data) {
     // Обработайте ошибку по вашему усмотрению
   }
 }
+
+// Функции валидации формы
+function displayError(errorId, errorMessage) {
+  let errorElement = document.getElementById(errorId);
+  if (errorElement) {
+    errorElement.textContent = errorMessage;
+  }
+}
+
+function clearError(errorId) {
+  let errorElement = document.getElementById(errorId);
+  if (errorElement) {
+    errorElement.textContent = "";
+  }
+}
+
+function clearErrorOnInput(event) {
+  console.log('очистили');
+  let errorId = event.target.id + "-error";
+  clearError(errorId);
+  removeErrorClass(event.target);
+}
+
+function addErrorClass(inputElement) {
+  inputElement.classList.add("error-input");
+}
+
+function removeErrorClass(inputElement) {
+  inputElement.classList.remove("error-input");
+}
+
+function downloadFile(file_path) {
+  // Создайте ссылку с путем к файлу
+  let downloadLink = document.createElement("a");
+  downloadLink.href = "./download_files/" + file_path; // Замените на реальный путь к вашему файлу
+  downloadLink.download = "./download_files/" + file_path; // Замените на реальное имя вашего файла
+
+  // Автоматически нажмите на ссылку для скачивания файла
+  downloadLink.click();
+}

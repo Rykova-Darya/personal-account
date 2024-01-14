@@ -68,8 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         removeErrorClass(newPasswordInput);
       }
-
-      //сюда добавить отправку формы ajax;
     });
 
   //Валидация формы входа
@@ -114,7 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sendFormData("form-login", "/send-login", function (data) {
       console.log(data);
-      window.location.href = '/info';
+      if (data === 'enrolles-list') {
+        window.location.href = "/enrolles-list";
+      } else {
+        window.location.href = "/info";
+      } ;
     });
     sendFormData("form-signup", "/signup", function (data) {
       if (data === true) {
@@ -150,45 +152,6 @@ function isValidEmail(email) {
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
-
-function displayError(errorId, errorMessage) {
-  let errorElement = document.getElementById(errorId);
-  if (errorElement) {
-    errorElement.textContent = errorMessage;
-  }
-}
-
-function clearError(errorId) {
-  let errorElement = document.getElementById(errorId);
-  if (errorElement) {
-    errorElement.textContent = "";
-  }
-}
-
-function clearErrorOnInput(event) {
-  let errorId = event.target.id + "-error";
-  clearError(errorId);
-  removeErrorClass(event.target);
-}
-
-function addErrorClass(inputElement) {
-  inputElement.classList.add("error-input");
-}
-
-function removeErrorClass(inputElement) {
-  inputElement.classList.remove("error-input");
-}
-
-    // function sendFormData(form_id, url) {
-    //   document.getElementById(form_id).addEventListener("submit", function (e) {
-    //     e.preventDefault();
-    //     let formData = new FormData(this);
-        
-    //     let data =  sendHttpRequest(url, formData);
-    //     console.log({data: data});
-    //     return data;
-    //   });
-    // }
 
 function sendFormData(form_id, url, callback) {
   document

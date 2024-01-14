@@ -40,5 +40,36 @@ class Controller
     header('Location: /' . $url);
     exit;
   }
+
+  public function debug($arr) {
+    echo '<pre>';
+    var_dump($arr);
+    echo '</pre>';
+  }
+
+  public function err_log($log) {
+    error_log('============================' . PHP_EOL);
+    error_log(json_encode($log) . PHP_EOL);
+    error_log('============================' . PHP_EOL);
+  }
+
+  public function download_file($file_path)
+  {
+    $file_path = '../download_files/' . $file_path;
+
+    // Установите заголовки для скачивания файла
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="' . basename($file_path) . '"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($file_path));
+
+    // Прочитайте файл и отправьте его содержимое
+    readfile($file_path);
+    exit;
+  }
 }
+
 ?>

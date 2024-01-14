@@ -1,0 +1,36 @@
+.info-account {
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+/* .title {
+  margin-top: 5em;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #d1d1e0;
+}
+
+@media only screen and (min-width: 992px) {
+
+  table {
+    width: 50%;
+  }
+} */

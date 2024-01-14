@@ -21,12 +21,12 @@
         <h1>Войти</h1>
         <form id="form-login" method="POST">
           <div class="label-container">
-            <label htmlFor="email-login">Email:</label>
+            <label for="email-login">Email:</label>
             <input type="email" id="email-login" name="email" placeholder="Введите адрес электронной почты">
             <div id="email-login-error" class="error-message"></div>
           </div>
           <div class="label-container">
-            <label htmlFor="password-login">Пароль:</label>
+            <label for="password-login">Пароль:</label>
             <input type="password" id="password-login" name="password" placeholder="Введите пароль" autocomplete="new-password">
             <div id="password-login-error" class="error-message"></div>
           </div>
@@ -42,17 +42,17 @@
         <h1 class="title">Зарегистрироваться</h1>
         <form id="form-signup" method="POST">
           <div class="label-container">
-            <label htmlFor="email">Email:</label>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Введите адрес электронной почты">
             <div id="email-error" class="error-message"></div>
           </div>
           <div class="label-container">
-            <label htmlFor="password">Пароль:</label>
+            <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" placeholder="Придумайте пароль" autocomplete="new-password">
             <div id="password-error" class="error-message"></div>
           </div>
           <div class="label-container">
-            <label htmlFor="newPassword">Повторите Пароль:</label>
+            <label for="newPassword">Повторите Пароль:</label>
             <input type="password" id="newPassword" name="newPassword" placeholder="Повторите пароль" autocomplete="new-password">
             <div id="newPassword-error" class="error-message"></div>
           </div>

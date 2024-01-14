@@ -13,7 +13,6 @@ class Auth extends Controller
 
   public function auth()
   {
-    error_log('0000000000000000000000000000000');
     error_log(json_encode($_SESSION));
     $this->display('login');
   }
@@ -82,6 +81,11 @@ class Auth extends Controller
     if ($user_data !== false) {
       $_SESSION['user_login'] = $user_data['login'];
       $_SESSION['user_password'] = $user_data['password'];
+      $_SESSION['user_id'] = $user_data['user_id'];
+      if ($user_data['is_emploee']) {
+      $_SESSION['is_emploee'] = 'enrolles-list';
+        return 'enrolles-list';
+      }
       return true;
     } else {
       return false;

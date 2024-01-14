@@ -1,0 +1,47 @@
+.info-list {
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+th {
+  background-color: #b294f285;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+ th,
+ td {
+   border: 1px solid #ddd;
+   padding: 8px;
+   text-align: left;
+ }
+
+ .table-container {
+  overflow-x: auto;
+  max-width: 100%;
+ }
+
+ .download_file {
+      padding: 1.5em;
+      background-image: url(../images/download.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-color: transparent;
+    }
+  
+    .download_file:hover,
+    .download_file:active {
+      background-image: url(../images/download.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-color: transparent;
+    }
+
+    .doc {
+      text-align: center;
+    }
