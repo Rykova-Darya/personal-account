@@ -1,0 +1,131 @@
+
+
+body {
+  background: url('../images/stars-sky.jpg');
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.btn {
+  font-size: 1.5rem;
+  height: 16vh;
+  border-radius: 1rem;
+}
+
+
+
+.btn-name {
+  display: inline-block;
+  padding: 1%;
+}
+
+.login,
+.signup {
+  position: relative;
+  width: 7vw;
+  background: #F2F2F2;
+}
+
+.close-form {
+  padding: 1.5em;
+  background-image: url(../images/delete.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  position: absolute;
+  top: 5%;
+  right: 1%;
+}
+
+.hidden {
+  display: none;
+}
+
+.signup,
+.login  {
+  width: 95%;
+  padding: 5%;
+}
+
+.btn-signup,
+.btn-login {
+  color: #0D0D0D;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    /* margin-top: 1%; */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-signup:hover,
+.btn-signup:active,
+.btn-login:hover,
+.btn-login:active {
+  color: #B294F2;
+  text-decoration: underline;
+}
+
+
+
+.btn-submit {
+  width: 100%;
+  height: 2.5rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  color: #F3EFEF;
+  font-size: 1.15rem;
+  padding-left: 2%;
+  background-color: #976DF2;
+  border-color: #976DF2;
+}
+
+.btn-submit:hover,
+.btn-submit:active {
+  background-color: #5F4A8C;
+  border-color: #5F4A8C;
+}
+
+.error-message {
+  color: #FF6868;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  padding-left: 0.25rem;
+  font-size: 0.625rem;
+  padding-top: 1%;
+}
+
+.error-input {
+  border-color: #FF6868;
+}
+
+.filter {
+  filter: opacity(0.5);
+}
+
+
+
+@media only screen and (min-width: 992px) {
+  .signup,
+    .login {
+      width: 30%;
+      padding: 5%;
+    }
+}

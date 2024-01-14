@@ -1,0 +1,16 @@
+{
+    "name": "testguap/dasha",
+    "description": "\"Persenal account\"",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dasha Rykova",
+            "email": "daryarykova@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,700&display=swap');
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+h1 {
+  color: #0D0D0D;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+button,
+input {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #B294F2;
+}
+
+button {
+  color: #F2F2F2;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 500;
+  background: #976DF2;
+}
+
+button:hover,
+button:active {
+  background: #5F4A8C;
+}
+
+button:focus {
+  background: #5F4A8C;
+}
+
+.form,
+label {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.label-container {
+  margin-bottom: 2%;
+}
+
+label {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: #0D0D0D;
+  font-size: 1rem;
+  margin-bottom: 1%;
+}
+
+input {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: #0D0D0D;
+  width: 97%;
+  height: 2.25em;
+  border-radius: 0.625rem;
+  border: 0.125em solid #260101;
+  padding-left: 2%;
+}
+
+input::placeholder {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 200;
+}
+
+input:focus {
+  border: none;
+}
+
+.btn-container {
+  margin-top: 4%;
+}
+
+
+
