@@ -8,7 +8,7 @@ use App\Controller\Controller;
 use App\InLK\InLK;
 
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set("display_errors", 0);
 header("Content-type: text/html; charset=utf-8");
 
 //В этом файле должно быть только подключение всех необходимых библиотек и перенаправление запросов на нужный класс->метод!
