@@ -11,22 +11,14 @@ error_reporting(E_ALL);
 ini_set("display_errors", 0);
 header("Content-type: text/html; charset=utf-8");
 
-//В этом файле должно быть только подключение всех необходимых библиотек и перенаправление запросов на нужный класс->метод!
-
 require_once "config.php";
 
-// echo 'Hello World';
 error_log(json_encode(file_exists("Controllers/MainController/Controller.php")));
-// require_once "Controllers/Controller.php";
-// require_once "Controllers/Auth.php";
-// require_once "Controllers/MainController/Controller.php";
-$page = isset($_GET['page']) ? $_GET['page'] : ''; //TODO: убрать вообще из маршрутизации
-$page = isset($_POST['page']) ? $_POST['page'] : $page; // параметр page переданный в post имеет больший приоритет чем get
+
+$page = isset($_GET['page']) ? $_GET['page'] : '';
+$page = isset($_POST['page']) ? $_POST['page'] : $page;
 
 switch ($page) {
-  // case 'auth' : $c = new Auth(); $c->auth(); break;
-  // case 'auth' : $c = new Controller; $c->auth(); break;
-  // default : $c = new Controller; $c->auth(); break;
   case 'login': $c = new Auth; $c->auth(); break;
   case 'send-login': $c = new Auth; $c->send_login(); break;
   case 'signup': $c = new Auth; $c->signup(); break;
