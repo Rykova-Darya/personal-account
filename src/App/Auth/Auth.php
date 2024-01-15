@@ -32,7 +32,6 @@ class Auth extends Controller
     if (isset($_POST['action'])) {
       if ($_POST['action'] === 'send-login') {
         $result = $this->authorization($_POST['email'], $_POST['password']);
-        // $result = $_POST;
         echo json_encode($result);
 
       }
@@ -59,11 +58,7 @@ class Auth extends Controller
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $result = $this->db->enrollee_registration($email, $hashed_password);
         if ($result) {
-          // error_log('DDDDDDDDDDDDDDDDDDDDDDDDDDDDD');
-          // $_SESSION['user_email'] = $email;
-          //TODO Если метод возвращает тру, то писать, что данные успешно отправлены и выводить кнопку войти в личный кабинет
           echo json_encode($result);
-          // $this->redirect("info");  
           exit;
         } else {
           echo json_encode(array('success' => false, 'text' => 'Проверьте введенные данные.'));
@@ -91,5 +86,4 @@ class Auth extends Controller
       return false;
     }
   }
-  //TODO написать метод, который будет записыватьв сессию данные. И вызывать его в методе auth
 }

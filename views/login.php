@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="" />
-  <!-- <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="../index.css?<?= time(); ?>">
   <link rel="stylesheet" href="../public/login/styles/styles.css?<?= time(); ?>">
 
@@ -68,7 +67,6 @@
 
   <script src="../index.js?<?= time() ?>"></script>
   <script src="../public/login/scripts/script.js?<?= time() ?>"></script>
-  <!-- <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
 
 </html>

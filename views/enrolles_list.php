@@ -44,7 +44,6 @@
   </div>
 
   <script src="../index.js?<?= time() ?>"></script>
-  <!-- <script src="../public/info/scripts/script.js?<?= time() ?>"></script> -->
   <script src="../public/account/scripts/scripts.js"></script>
 </body>
 

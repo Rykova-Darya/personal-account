@@ -71,7 +71,6 @@
   </div>
 
   <script src="../index.js?<?= time() ?>"></script>
-  <!-- <script src="../public/info/scripts/script.js?<?= time() ?>"></script> -->
   <script src="../public/info/scripts/scripts.js"></script>
 </body>
 

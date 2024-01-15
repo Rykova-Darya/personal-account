@@ -17,7 +17,6 @@ class InLk extends Controller
   public function __construct()
   {
     parent::__construct();
-    //TODO добавить проверку
     if (!isset($_SESSION['user_login']) || !isset($_SESSION['user_password'])) {
       $this->redirect('login');
       exit;
@@ -27,10 +26,8 @@ class InLk extends Controller
   public function info()
   {
     if ($this->db->is_employee()) {
-      // $this->display('enrolles_list');
       exit;
     }
-    //Если данных в t_enrollee нет в бд на юзера, то делать редирект на account.
     if ($this->db->check_data_enrolee() !== false) {
       $this->account();
     } else {
@@ -43,7 +40,6 @@ class InLk extends Controller
   }
 
   public function account() {
-    //Добавить скрытие страницы account
     if ($this->db->check_data_enrolee_status() !== true) {
       $this->info();
       exit;
@@ -72,10 +68,7 @@ class InLk extends Controller
       if ($data['action']) {
         if ($data['action'] === 'logout') {
           session_unset();
-
           return true;
-
-          // $this->redirect('auth');
         } else {
           return false;
         }
@@ -126,9 +119,7 @@ class InLk extends Controller
           $id_educ_doc = $this->db->set_educational_doc($file_name, $real_file_name);
           $params['file_path'] = $id_educ_doc;
           if ($id_educ_doc !== false) {
-            //Записываем данные в базу про анкету
             if ($this->db->get_enrollee_date($params)) {
-              //redirect на страницу клиента
               $this->redirect('account');
             }
 
@@ -136,7 +127,6 @@ class InLk extends Controller
             echo "Ошибка при сохранении файла.";
           }
          ;
-          //Здесь вызываем метод загрузки в бд
         } else {
           echo "Ошибка при сохранении файла.";
         }

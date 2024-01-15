@@ -136,7 +136,6 @@ function handleFormClose(closeForm, form, btn) {
   closeForm.addEventListener("click", function (e) {
     form.classList.add("hidden");
     btn.classList.remove("hidden");
-    // window.history.back();
   });
 }
 
@@ -164,7 +163,6 @@ function sendFormData(form_id, url, callback) {
         let data = await sendHttpRequest(url, formData);
         console.log({ data: data });
 
-        // Вызов колбэка с данными
         if (callback && typeof callback === "function") {
           callback(data);
         }

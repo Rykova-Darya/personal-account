@@ -1,19 +1,6 @@
-// async function sendHttpRequest(url, formData) {
-//   console.log(formData);
-//   let response = await fetch(url, {
-//     method: "POST",
-//     body: formData,
-//   });
-//   let data = await response.json();
-//     if (!response.ok) {
-//     throw new Error(data.message || 'Ошибка запроса');
-//   }
-//   return data;
-// }
-
 async function sendHttpRequest(url, formData) {
   console.log(formData);
-  let data; // Переменная в области видимости функции
+  let data;
 
   let response = await fetch(url, {
     method: "POST",
@@ -24,7 +11,6 @@ async function sendHttpRequest(url, formData) {
     data = await response.json();
   } catch (jsonError) {
     console.error(`Ошибка HTTP: ${response.status}`);
-    // Обработка ошибки JSON парсинга
   }
 
   if (!response.ok) {
@@ -39,9 +25,9 @@ async function sendSimpleHttpRequest(url, data) {
     const response = await fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", // Укажите правильный Content-Type
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data), // Преобразуйте объект в JSON
+      body: JSON.stringify(data),
     });
 
     if (!response.ok) {
@@ -52,7 +38,6 @@ async function sendSimpleHttpRequest(url, data) {
     return responseData;
   } catch (error) {
     console.error("Ошибка при отправке данных на сервер:", error);
-    // Обработайте ошибку по вашему усмотрению
   }
 }
 
@@ -87,11 +72,8 @@ function removeErrorClass(inputElement) {
 }
 
 function downloadFile(file_path) {
-  // Создайте ссылку с путем к файлу
   let downloadLink = document.createElement("a");
-  downloadLink.href = "./download_files/" + file_path; // Замените на реальный путь к вашему файлу
-  downloadLink.download = "./download_files/" + file_path; // Замените на реальное имя вашего файла
-
-  // Автоматически нажмите на ссылку для скачивания файла
+  downloadLink.href = "./download_files/" + file_path;
+  downloadLink.download = "./download_files/" + file_path;
   downloadLink.click();
 }

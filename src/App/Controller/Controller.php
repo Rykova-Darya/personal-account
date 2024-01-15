@@ -17,8 +17,6 @@ class Controller
 
   }
 
-  // функция для отображения вьюшки и шаблона. по дефолту установлен шаблон main
-  // сначало выполняется код вьюшки потом шаблона, весь вывод вьюшки сохраняется в переменную и вставляется в определенное место шаблона.
   protected function display($view)
   {
     ob_start();
@@ -57,7 +55,6 @@ class Controller
   {
     $file_path = '../download_files/' . $file_path;
 
-    // Установите заголовки для скачивания файла
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="' . basename($file_path) . '"');
@@ -66,7 +63,6 @@ class Controller
     header('Pragma: public');
     header('Content-Length: ' . filesize($file_path));
 
-    // Прочитайте файл и отправьте его содержимое
     readfile($file_path);
     exit;
   }
